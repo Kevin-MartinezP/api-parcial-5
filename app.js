@@ -1,4 +1,6 @@
 const { check, validationResult } = require("express-validator");
+const cors = require("cors");
+
 const express = require("express"),
     app = express(),
     bodyParser = require("body-parser"),
@@ -23,6 +25,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(methodOverride());
 app.use(express.static("public"));
+app.use(cors());
 
 const validarCampos = (req, res, next) => {
     const errors = validationResult(req);
