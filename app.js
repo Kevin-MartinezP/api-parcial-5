@@ -67,6 +67,6 @@ proyecto.route('/proyecto/:id')
 app.use("/api", proyecto)
 
 
-app.listen(8080, function () {
+app.listen(process.env.PORT, function () {
   console.log("Node server running on http://localhost:8080");
 });
