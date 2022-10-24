@@ -29,7 +29,8 @@ exports.agregarProyecto = function (req, res) {
         codigo: req.body.codigo,
         nombre_proyecto: req.body.nombre_proyecto,
         monto: req.body.monto,
-        fecha: req.body.fecha
+        fecha: req.body.fecha,
+        pais_ejecuta: req.body.pais_ejecuta
     });
   
     proyecto.save(function (err, proyecto) {
@@ -45,6 +46,7 @@ exports.agregarProyecto = function (req, res) {
       proyecto.nombre_proyecto = req.body.nombre_proyecto;
       proyecto.monto = req.body.monto;
       proyecto.fecha = req.body.fecha;
+      pais_ejecuta = req.body.pais_ejecuta;
 
       proyecto.save(function (err) {
         if (err) return res.status(500).send(err.message);
